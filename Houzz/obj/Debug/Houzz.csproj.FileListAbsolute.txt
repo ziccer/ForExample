@@ -1,0 +1,10 @@
+D:\EDF dev\WheelsScraper 2\WheelsScraper\bin\Debug\Houzz.dll
+D:\EDF dev\WheelsScraper 2\WheelsScraper\bin\Debug\Houzz.pdb
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.csprojAssemblyReference.cache
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Databox.Libs.Houzz.ucExtSettings.resources
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.csproj.GenerateResource.cache
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.dll.licenses
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.csproj.CoreCompileInputs.cache
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.csproj.CopyComplete
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.dll
+D:\EDF dev\EDF Modules\Houzz\obj\Debug\Houzz.pdb

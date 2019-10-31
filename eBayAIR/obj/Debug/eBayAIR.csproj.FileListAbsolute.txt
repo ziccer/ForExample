@@ -1,0 +1,11 @@
+D:\EDF dev\WheelsScraper 2\WheelsScraper\bin\Debug\eBayAIR.dll.config
+D:\EDF dev\WheelsScraper 2\WheelsScraper\bin\Debug\eBayAIR.dll
+D:\EDF dev\WheelsScraper 2\WheelsScraper\bin\Debug\eBayAIR.pdb
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.csprojAssemblyReference.cache
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\Databox.Libs.eBayAIR.ucExtSettings.resources
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.csproj.GenerateResource.cache
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.dll.licenses
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.csproj.CoreCompileInputs.cache
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.csproj.CopyComplete
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.dll
+D:\EDF dev\EDF Modules\eBayAIR\obj\Debug\eBayAIR.pdb
