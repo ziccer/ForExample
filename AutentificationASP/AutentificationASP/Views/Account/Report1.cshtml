@@ -1,0 +1,176 @@
+﻿@model AutentificationASP.Models.CargoTransportationListViewModel
+
+
+@{
+    ViewBag.Title = "Report One";
+}
+
+<h2>Report One</h2> <br />
+                    <h4>Make a choice and click on the button "Filter": </h4>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label"> From: </label>
+        @Html.DropDownList("cityname", Model.CityNames as SelectList, htmlAttributes: new { @class = "form-control" })
+
+        <label class="control-label"> To: </label>
+        @Html.DropDownList("town", Model.Towns as SelectList, htmlAttributes: new { @class = "form-control" })
+
+        <input type="submit" value="Filter" class="btn btn-default" /> <br />
+    </div>
+
+</form>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered text-center table-striped table-hover">
+        <thead class="thead-light">
+            <tr class="align-middle">
+                <th> From City</th>
+                <th> To City </th>
+                <th> Planned </th>
+                <th> Fact  </th>
+                <th> Day 1 </th>
+                <th> Day 2 </th>
+                <th> Day 3 </th>
+                <th> Day 4 </th>
+                <th> Day 5 </th>
+                <th> Day 6 </th>
+                <th> Day 7 </th>
+                <th> Day 8 </th>
+                <th> Day 9 </th>
+                <th> Day 10 </th>
+                <th> Day 11 </th>
+                <th> Day 12 </th>
+                <th> Day 13 </th>
+                <th> Day 14 </th>
+                <th> Day 15 </th>
+                <th> Day 16 </th>
+                <th> Day 17 </th>
+                <th> Day 18 </th>
+                <th> Day 19 </th>
+                <th> Day 20 </th>
+                <th> Day 21 </th>
+                <th> Day 22 </th>
+                <th> Day 23 </th>
+                <th> Day 24 </th>
+                <th> Day 25 </th>
+                <th> Day 26 </th>
+                <th> Day 27 </th>
+                <th> Day 28 </th>
+                <th> Day 29 </th>
+                <th> Day 30 </th>
+                <th> Day 31 </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CargoTransportations)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.CityName)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.Town.Name)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.PlannedAmount)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.FactAmount)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth01)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth02)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth03)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth04)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth05)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth06)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth07)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth08)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth09)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth10)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth11)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth12)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth13)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth14)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth15)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth16)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth17)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth18)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth19)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth20)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth21)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth22)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth23)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth24)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth25)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth26)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth27)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth28)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth29)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth30)</td>
+
+
+                    <td> @Html.DisplayFor(modelItem => item.DayOfMonth31)</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

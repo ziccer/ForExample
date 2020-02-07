@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h3 class="text-center">Berezin Oleg test work</h3>
+<div class="jumbotron">
+    <h4 class="glyphicon-text-color">@ViewBag.UserLogin</h4> <br />
+    
+    <h3>All users from the database:</h3>
+    <table class="table table-bordered text-center table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <td>Login</td>
+                <td>Password</td>
+                <td>Priority*</td>
+            </tr>
+        </thead>
+        @foreach (var item in ViewBag.Autentication)
+        {
+            <tr>
+                <td>@item.Email </td>
+                <td>@item.Password</td>
+                <td>@item.RoleId</td>
+            </tr>
+        }
+    </table>
+    <h6>
+        <pre>Priority*
+            1 - full access    
+            2 - limited access (access to reports is closed)    
+All new users will have priority 2
+        </pre>
+    </h6>
+
+
+</div>
+
+
+
