@@ -1,0 +1,36 @@
+﻿@using AutentificationASP.Models
+@model IEnumerable<HierList>
+<h2>Report Three</h2><br>
+
+<h4>Accepted designation plan / fact </h4> <br>
+@helper BuildMenu(IEnumerable<HierList> data, int? parentId = null)
+{
+    var items = data.Where(d => d.ParentId == parentId).OrderBy(i => i.Order);
+    if (items.Any())
+    {
+        <ul>
+            @foreach (var item in items)
+            {
+                if (@item.Parent == null)
+                {
+                    <li>
+                        <p> @item.Header => </p>
+                        @BuildMenu(data, item.Id)
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p> @item.Header: @item.Planning / @item.Fact </p>
+                        @BuildMenu(data, item.Id)
+                    </li>
+                }
+            }
+        </ul>
+    }
+}
+
+<div id="cssmenu">
+    @BuildMenu(Model)
+</div>
+

@@ -1,12 +1,64 @@
-﻿@model IEnumerable<AutentificationASP.Models.User>
+﻿@model IEnumerable<AutentificationASP.Models.HierarchyList>
 
 @{
-    ViewBag.Title = "Report Two";
+    ViewBag.Title = "Report2";
 }
-<div class="alert-info">
-    <h2>Report two - in development</h2>
 
-    <p>Note: I will be able to continue working on Report two after my coming back from vacation (February, 17). If it's fine, please, let me know.</p><br />
-    <p>I apologize for the inconveniences</p>
+<h2>Report Two</h2><br>
 
-</div>
+
+<table class="table table-bordered text-center table-hover">
+    <tr>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.FromCity)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.ToCity)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Plan)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Fact)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fact)
+        </td>
+    </tr>
+}
+
+</table>
+
+    <form id="form1" runat="server">
+        <div style="font-family: Arial">
+            <asp:TreeView ID="TreeView1" runat="server" Height="306px" Width="213px">
+                <Nodes>
+                    <asp:TreeNode Text="Home" NavigateUrl="~/Home.aspx" Target="_blank" />
+                    <asp:TreeNode Text="Home1" NavigateUrl="~/Home.aspx" Target="_blank">
+                        <asp:TreeNode Text="Home Inside 1" NavigateUrl="~/Home.aspx" Target="_blank" />
+                        <asp:TreeNode Text="Home Inside 2" NavigateUrl="~/Home.aspx" Target="_blank" />
+                        <asp:TreeNode Text="Home Inside 3" NavigateUrl="~/Home.aspx" Target="_blank" />
+                    </asp:TreeNode>
+
+                    <asp:TreeNode Text="Home2" NavigateUrl="~/Home.aspx" Target="_blank" />
+                    <asp:TreeNode Text="Home3" NavigateUrl="~/Home.aspx" Target="_blank" />
+                </Nodes>
+            </asp:TreeView>
+        </div>
+    </form>
+
+

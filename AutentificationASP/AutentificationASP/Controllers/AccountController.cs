@@ -110,7 +110,60 @@ namespace AutentificationASP.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Report2()
         {
-            return View();
+            List<HierarchyList> rezultHierarchy = new List<HierarchyList>();
+            try
+            {
+                var townNames = myDb.Towns.ToList(); 
+
+                
+                List<string> cities = new List<string>(); 
+
+                var cT = myDb.CargoTransportations.ToList();
+                var citySearch = from x in cT
+                                 group x by x.CityName;
+
+                int id = 1;
+                foreach (var item in citySearch)
+                {
+                    cities.Add(item.Key);
+                }
+                foreach (var itemFrom in cities)
+                {
+                    var searchByCitys = from c in cT
+                                        where c.CityName == itemFrom
+                                        select c;
+
+                    if (searchByCitys.Any())
+                    {
+                        foreach (var itemTo in searchByCitys)
+                        {
+                            HierarchyList cityChild = new HierarchyList();
+                            cityChild.Id = id;
+                            cityChild.FromCity = itemTo.CityName;
+                            cityChild.ToCity = itemTo.Town.Name;
+                            cityChild.Plan = itemTo.PlannedAmount.ToString();
+                            cityChild.Fact = itemTo.FactAmount.ToString();
+                            //cityChild.Order = or;
+                            //cityChild.ParentId = orderId;
+                            rezultHierarchy.Add(cityChild);
+                            id++;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+            
+
+            return View(rezultHierarchy);
+        }
+        public ActionResult Report3()
+        {
+            List<HierList> cityItems = myDb.HierLists.ToList();
+            return View(cityItems);
         }
     }
 }

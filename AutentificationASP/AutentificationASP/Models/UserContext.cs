@@ -8,31 +8,38 @@ namespace AutentificationASP.Models
 {
     public class UserContext : DbContext
     {
-        public UserContext() : base ("DefaultConnection")
+        public UserContext() : base("DefaultConnection")
         {
-        
+
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<CargoTransportation> CargoTransportations { get; set; }
         public DbSet<Town> Towns { get; set; }
+        public DbSet<HierList> HierLists { get; set; }
 
     }
     public class UserDbInitializer : DropCreateDatabaseAlways<UserContext>
     {
         protected override void Seed(UserContext db)
         {
-            db.Roles.Add(new Role {Id = 1, Name = "admin" });
+            db.Roles.Add(new Role { Id = 1, Name = "admin" });
             db.Roles.Add(new Role { Id = 2, Name = "user" });
-            db.Users.Add(new User {Id = 1, Email = "admin", Password = "admin", RoleId = 1 });
+            db.Users.Add(new User { Id = 1, Email = "admin", Password = "admin", RoleId = 1 });
             db.Users.Add(new User { Id = 2, Email = "oleg", Password = "123123", RoleId = 1 });
             db.Users.Add(new User { Id = 3, Email = "guest", Password = "123321", RoleId = 2 });
-            Town t1 = new Town {Name = "Dnepr"};
+            Town t1 = new Town { Name = "Dnepr" };
             Town t2 = new Town { Name = "Kyev" };
             Town t3 = new Town { Name = "Odessa" };
             Town t4 = new Town { Name = "Lvov" };
             Town t5 = new Town { Name = "Kharkov" };
-            db.CargoTransportations.Add(new CargoTransportation { Id = 1, CityName = "Dnepr", Town = t4, PlannedAmount = 42, FactAmount = 18,
+            db.CargoTransportations.Add(new CargoTransportation
+            {
+                Id = 1,
+                CityName = "Dnepr",
+                Town = t4,
+                PlannedAmount = 42,
+                FactAmount = 18,
                 DayOfMonth01 = 0,
                 DayOfMonth02 = 1,
                 DayOfMonth03 = 1,
@@ -260,6 +267,23 @@ namespace AutentificationASP.Models
                 DayOfMonth30 = 2,
                 DayOfMonth31 = 2,
             });
+
+            var menuItems = new List<HierList>
+                {
+                    new HierList{Id=1, Header = "Dnepr", Url = "#", Order = 1},
+                    new HierList{Id=2, Header = "Kyev", Url = "#", Order = 2},
+                    new HierList{Id=3, Header = "Odessa", Url = "#", Order = 3},
+                    new HierList{Id=4, Header = "Kharkov", Url = "#", Order = 4},
+                    new HierList{Id=5, Header = "Lvov", Url = "#", Order = 1, ParentId = 1, Planning = 42, Fact = 18},
+                    new HierList{Id=6, Header = "Kyev", Url = "#", Order = 2, ParentId = 1, Planning = 32, Fact = 13},
+                    new HierList{Id=7, Header = "Odessa", Url = "#",  Order = 1, ParentId = 2, Planning = 41, Fact = 24},
+                    new HierList{Id=8, Header = "Lvov", Url = "#", Order = 2, ParentId = 3, Planning = 50, Fact = 32},
+                    new HierList{Id=9, Header = "Dnepr", Url = "#", Order = 3, ParentId = 3, Planning = 105, Fact = 50},
+                    new HierList{Id=10, Header = "Lvov", Url = "#", Order = 3, ParentId = 4, Planning = 21, Fact = 19}
+                };
+            db.HierLists.AddRange(menuItems);
+
+
             db.SaveChanges();
             base.Seed(db);
         }

@@ -34,5 +34,12 @@ namespace AutentificationASP.Controllers
 
             return View();
         }
+        public ActionResult Test()
+        {
+            
+
+            return View();
+        }
+
     }
 }
